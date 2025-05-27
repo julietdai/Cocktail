@@ -1,0 +1,363 @@
+
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: #f7f7f7;
+    color: #333;
+  }
+  
+  
+  .hero {
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    padding: 4rem 2rem;
+    text-align: center;
+    color: white;
+  }
+  
+  .hero-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+  }
+  
+  .search-area {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 1rem;
+  }
+  
+  .search-area input {
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    width: 250px;
+    font-size: 1rem;
+  }
+  
+  .search-area button {
+    background: #ffffff;
+    color: #2575fc;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .search-area button:hover {
+    background: #dcdcdc;
+  }
+  
+  
+  .main-content {
+    padding: 2rem;
+  }
+  
+  
+  .results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+  }
+  
+  
+  .cocktail-card {
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    overflow: hidden;
+    transition: transform 0.3s;
+  }
+  
+  .cocktail-card:hover {
+    transform: translateY(-5px);
+  }
+  
+  .cocktail-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  
+  .cocktail-card-content {
+    padding: 1rem;
+  }
+  
+  .cocktail-card-content h2 {
+    font-size: 1.5rem;
+    margin: 0 0 0.5rem 0;
+  }
+  
+  .cocktail-card-content p {
+    font-size: 0.9rem;
+    line-height: 1.4;
+    color: #666;
+  }
+  
+  
+  footer {
+    text-align: center;
+    padding: 1rem;
+    font-size: 0.9rem;
+    background: #eee;
+  }
+  
+
+  
+  /* Previous styles remains the same from the class presentation, add these new ones */
+
+/* Modal styles */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 5% auto;
+  padding: 2rem;
+  border-radius: 10px;
+  width: 70%;
+  max-width: 800px;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 5px 30px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  right: 1rem;
+  top: 1rem;
+  font-size: 2rem;
+  font-weight: bold;
+  cursor: pointer;
+  color: #666;
+}
+
+.close:hover {
+  color: #333;
+}
+
+/* Detailed view styles */
+.cocktail-detail {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.cocktail-detail-header {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+.cocktail-detail img {
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.cocktail-detail-info {
+  flex: 1;
+}
+
+.cocktail-detail h2 {
+  margin-top: 0;
+  color: #2575fc;
+}
+
+.cocktail-detail h3 {
+  margin-bottom: 0.5rem;
+  color: #6a11cb;
+}
+
+.ingredients-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.ingredient-item {
+  background: #f0f0f0;
+  padding: 0.5rem;
+  border-radius: 5px;
+}
+
+/* Tabs */
+.tabs {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+  gap: 0.5rem;
+}
+
+.tab {
+  padding: 0.5rem 1rem;
+  background: rgba(255, 255, 255, 0.2);
+  border: none;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.tab:hover {
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.tab.active {
+  background: white;
+  color: #2575fc;
+  font-weight: bold;
+}
+
+/* Favorite button */
+.favorite-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  color: #ccc;
+  transition: all 0.3s;
+}
+
+.favorite-btn.favorited {
+  color: gold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .cocktail-detail-header {
+    flex-direction: column;
+  }
+  
+  .modal-content {
+    width: 90%;
+    margin: 10% auto;
+  }
+}
+
+.delete-favorite {
+    background: #ff4444;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.delete-favorite:hover {
+    background: #cc0000;
+}
+
+.history-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.history-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.history-term {
+    background: none;
+    border: none;
+    color: #2575fc;
+    cursor: pointer;
+    text-align: left;
+    flex-grow: 1;
+}
+
+.delete-term {
+    background: none;
+    border: none;
+    color: #ff4444;
+    cursor: pointer;
+    font-size: 1.2rem;
+}
+
+/* Random button style */
+#random-btn {
+    background: #ff9f43;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+#random-btn:hover {
+    background: #ff7f00;
+}
+
+/* Favorites list styles */
+.favorites-list {
+    margin-top: 1rem;
+}
+
+.favorites-list-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem;
+    border-bottom: 1px solid #eee;
+}
+
+.favorites-list-item button {
+    background: #ff4444;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.favorites-list-item button:hover {
+    background: #cc0000;
+}
+
+/* Delete favorite button */
+.delete-favorite {
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    margin-left: 0.5rem;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.delete-favorite:hover {
+    background: #ff5252;
+}
+
+/* Ensure favorite button stays yellow */
+.favorite-btn.favorited {
+    color: gold !important;
+}
+
+/* Loading state for favorite buttons */
+.favorite-btn.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
