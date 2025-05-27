@@ -42,7 +42,7 @@ A full-stack web application for discovering and saving your favorite cocktail r
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/cocktail-finder.git
+   git clone https://github.com/julietdai/cocktail-finder.git
    ```
 
 2. Navigate to project directory:
